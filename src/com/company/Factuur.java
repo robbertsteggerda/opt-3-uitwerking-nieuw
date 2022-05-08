@@ -28,4 +28,18 @@ public class Factuur {
             return UURTARIEF_KORTING * aantalUren;
         }
     }
+
+    public double berekenPrijsIncBTW(int aantalUren,boolean btwToegevoegd,boolean senior,boolean ingeschreven){
+        if (!ingeschreven){
+            return -1;
+        }
+        double prijsExBtw = berekenPrijsExBTW(aantalUren);
+        if(senior){
+            prijsExBtw *= 0.9;
+        }
+        if(btwToegevoegd) {
+            return prijsExBtw * 1.21;
+        }
+        return prijsExBtw;
+    }
 }
