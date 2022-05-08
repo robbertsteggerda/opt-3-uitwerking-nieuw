@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 class BehandelingTest {
     @Test
-    void moetFactuurOpgemaaktWorden(){
+    void testMoetFactuurOpgemaaktWorden(){
         Assertions.assertFalse(new Behandeling(true,true,false).moetFactuurOpgemaaktWorden());
         Assertions.assertFalse(new Behandeling(true,false,true).moetFactuurOpgemaaktWorden());
         Assertions.assertFalse(new Behandeling(false,true,true).moetFactuurOpgemaaktWorden());
